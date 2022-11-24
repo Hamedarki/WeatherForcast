@@ -25,14 +25,14 @@ const Forcast = ({ data }) => {
 
   console.log(forCastDays);
   return (
-    <div className="m-auto hidden md:flex justify-center items-center flex-col">
+    <div className="m-auto hidden md:flex justify-start items-center flex-col h-96 overflow-auto mt-7 scrollbar">
       <label className="text-2xl font-bold">Daitly</label>
       <Accordion allowZeroExpanded>
         {data.list.splice(0, 7).map((item, index) => (
           <AccordionItem key={index}>
             <AccordionItemHeading>
               <AccordionItemButton>
-                <div className="rounded-sm h-[64px] m-[5px] bg-blue-200 flex items-center cursor-pointer p-[5px 20px]">
+                <div className="h-[64px] m-[5px] bg-[#ffffff] text-black rounded-lg flex items-center shadow-lg cursor-pointer p-[5px 20px]">
                   <img
                     alt="weather"
                     width={"40px"}

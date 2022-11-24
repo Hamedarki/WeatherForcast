@@ -2,6 +2,86 @@
 @tailwind components;
 @tailwind utilities;
 
+
+.map-container{
+  width: 290px;
+  height: 90px;
+  background-color: plum;
+}
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #636363 #b8b8b8;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #b8b8b8;
+    border-radius: 10px;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #636363;
+    border-radius: 9px;
+    border: 2px solid #ffffff;
+  }
+
+  .toggle-format{
+    position: relative;
+    font-family: 'Raleway', sans-serif
+  }
+  @keyframes switch-right {
+  0%{max-width: 6.1em}
+      
+  33%{  max-width: 14.4em  }
+  66% {    max-width: 14.4em;
+    transform: translateX(0em)}
+  
+  100%{max-width: 7.9em ;
+    transform: translateX(6.4em)}
+  }
+@keyframes switch-left {
+  0% { max-width: 7.9em ;
+    transform: translateX(6.4em)}
+     
+  33% {      max-width: 14.4em;
+    transform: translateX(0em)}
+
+  66%{      max-width: 14.4em
+  }
+  100% {      max-width: 6.1em
+  }
+}
+
+.inputtoggle{
+  display: none
+
+}
+
+.inputtoggle + .sidebar {
+  animation: switch-left 0.5s ease forwards
+
+}
+
+.inputtoggle:checked + .sidebar {
+  animation: switch-right 0.5s ease forwards
+
+}
+.sidebar{
+  position: absolute;
+        display: block;
+        border-radius: 3px;
+        background-color: #3e50b4;
+        width: 100%;
+        max-width: 6.1em;
+        height: 2em;
+        z-index: -1;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @layer components {
  
@@ -45,29 +125,11 @@
   }
 
   .tempeture{
-    font-weight: 800;
-    font-size: 4rem;
+    font-weight: 700;
+    font-size: 3.2rem;
     letter-spacing: -5px;
   }
-  .weather{
-    width: 300px;
-    border-radius: 6px;
-    box-shadow: 10px -2px 20px 2px rgb(0, 0, 0 / 30%);
-    color: #fff;
-    background-color:rgba(51, 51, 51, .8);
-    margin: 20px auto 0 auto;
-    display: flex;
-    flex-direction: column;
-  }
 
-  .top{
-    display: flex;
-    flex-direction: row;
-    gap: 2rem;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-  }
 
   .parameter-row{
     display: flex;
