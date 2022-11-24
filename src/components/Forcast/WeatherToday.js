@@ -5,16 +5,13 @@ import {FiWind} from 'react-icons/fi';
 import {WiNightAltCloudyWindy}  from 'react-icons/wi'
 const WeatherToday = ({data , datatoday}) => {
 
-   const [toggle,setToggle] = useState(false)
    const [weatherToday,setWeatherToday] =useState(false)
 
 
    const item = (Math.floor(datatoday.list[0].main.temp)) - (Math.floor(datatoday.list[6].main.temp))
 
    const todayWeather = (Math.floor(datatoday.list[0].main.temp)) - (Math.floor(datatoday.list[1].main.temp))
-   const chnageToggle = () =>{
-      setToggle(!toggle)
-   }
+ 
 
    const chnageWeatherForcast = () =>{
     setWeatherToday(!weatherToday)
