@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import '../../index.css'
 import {WiWindy} from 'react-icons/wi';
 import {FiWind} from 'react-icons/fi';
-import {WiNightAltCloudyWindy}  from 'react-icons/wi'
+import {WiNightAltCloudyWindy}  from 'react-icons/wi';
 const WeatherToday = ({data , datatoday}) => {
 
    const [weatherToday,setWeatherToday] =useState(false)
@@ -17,7 +17,6 @@ const WeatherToday = ({data , datatoday}) => {
     setWeatherToday(!weatherToday)
    }
 
-   console.log(`images/${data.weather[0].icon}.png`)
   return (
     <div className='bg-white shadow-lg border-t border-gray-400 w-[290px] h-[30vh]  md:h-auto flex flex-col p-3 gap-4'>
       <h3 className='mx-auto text-sm font-extrabold flex relative right-14'>Weather ForCast</h3>
@@ -34,7 +33,9 @@ const WeatherToday = ({data , datatoday}) => {
       </label>
 
       <div className='flex flex-row justify-around items-center'>
-      <img src={`images/${data.weather[0].icon}.png`} alt='weather 24 hours' className='w-9 overflow-hidden'/>
+      {/* <img src={`./assets/images/${data.weather[0].icon}.png`} alt='weather 24 hours'  */}
+      {/* {switchImportImage(data.weather[0].icon)} */}
+      {<img src={require(`../../images/${data.weather[0].icon}.png`)} alt='weather icon' className='w-9 overflow-hidden' />}
         <div className='felx flex-row justify-center items-center relative right-6 '>
           <div className='flex flex-col items-center justify-center font-bold'>
           <p className='text-3xl font-semibold'>{weatherToday ? Math.floor(datatoday.list[6].main.temp).toString().slice(0, 2) - item : Math.floor(datatoday.list[0].main.temp).toString().slice(0, 2) - todayWeather}°C</p>

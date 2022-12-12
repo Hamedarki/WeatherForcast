@@ -45,6 +45,7 @@ const Search = ({ onSearchChange }) => {
       value={search}
       onChange={handlerOnChnage}
       loadOptions={loadOptions}
+      className='z-10'
     />
   );
 };

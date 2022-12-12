@@ -24,6 +24,7 @@ const Forcast = ({ data }) => {
   );
 
   console.log(forCastDays);
+  console.log(data.list ,'adam')
   return (
     <div className="m-auto hidden md:flex justify-start items-center flex-col h-96 overflow-auto mt-7 scrollbar">
       <label className="text-2xl font-bold">Daitly</label>
@@ -37,7 +38,7 @@ const Forcast = ({ data }) => {
                     alt="weather"
                     width={"40px"}
                     height={"40px"}
-                    src={`/images/${item.weather[0].icon}.png`}
+                    src={require(`../../images/${data.weather[0].icon}.png`)}
                   />
                   <label className="font-semibold flex-1 ml-4 text-[#212121]">
                     {forCastDays[index]}

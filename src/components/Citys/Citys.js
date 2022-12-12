@@ -10,7 +10,7 @@ import "../../index.css";
 const Citys = ({ data }) => {
   //States
   const [show, setShow] = useState(false);
-
+  console.log(show)
   let timeToday = new Date().toLocaleTimeString();
 
   const [day, setDay] = useState(timeToday);
@@ -36,7 +36,7 @@ const Citys = ({ data }) => {
     setShow((curret) => !curret);
   };
 
-  console.log("data is :");
+  console.log("data is :" , handlerShow);
 
   //JSX Code
   return (
@@ -52,11 +52,8 @@ const Citys = ({ data }) => {
           {/* <p className="weather-descrpition">{data.weather[0].description}</p> */}
         </div>
         <div className="flex flex-row items-center gap-3 justify-center mr-8 my-3">
-          <img
-            alt="weather"
-            className="weather-icon"
-            src={`/images/${data.weather[0].icon}.png`}
-          />
+      
+          {<img src={require(`../../images/${data.weather[0].icon}.png`)} alt='weather icon' className='w-9 overflow-hidden' />}
           <p className="tempeture">
             {Math.round(data.main.temp).toString().slice(0, 2)}°C
           </p>
